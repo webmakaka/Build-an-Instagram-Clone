@@ -23,7 +23,9 @@
 
 ### 03 - Building our Social Media App
 
-4 - Advanced React Hooks (useContext, useReducer)
+<br/>
+
+### Advanced React Hooks (useContext, useReducer)
 
 <br/>
 
