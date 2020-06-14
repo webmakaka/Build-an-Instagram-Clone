@@ -29,10 +29,34 @@
 
 <br/>
 
-## Mastering GraphQL and Material UI
+## 02 Mastering GraphQL and Material UI
 
-1 - GraphQL Core Concepts (with Hasura)
-2 - Building a CRUD App with Apollo React Hooks
+<br/>
+
+### 01 - GraphQL Core Concepts (with Hasura)
+
+https://hasura.io/
+
+https://build-an-instagram-clone.herokuapp.com/
+
+Data --> Add a new table
+
+<br/>
+
+![Application](/img/pic-02-01.png?raw=true)
+
+<br/>
+
+### 02 - Building a CRUD App with Apollo React Hooks
+
+https://www.apollographql.com/docs/react/get-started/
+
+    $ cd graphql
+    $ npx create-react-app .
+    $ npm install apollo-boost @apollo/react-hooks graphql
+
+<br/>
+
 3 - Material UI Crash Course
 4 - Creating our App UI
 
