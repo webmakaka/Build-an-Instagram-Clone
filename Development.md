@@ -65,7 +65,25 @@ http://tachyons.io/
 
 <br/>
 
-3 - Material UI Crash Course
+<br/>
+
+### 03 - Material UI Crash Course
+
+<br/>
+
+https://material-ui.com/
+
+<br/>
+
+    $ cd apollo-music-share
+    $ npx create-react-app .
+
+<br/>
+
+    $ npm install @material-ui/core @material-ui/icons
+
+<br/>
+
 4 - Creating our App UI
 
 <br/>
