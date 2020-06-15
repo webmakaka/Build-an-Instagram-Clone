@@ -84,6 +84,10 @@ https://material-ui.com/
 
 <br/>
 
+![Application](/img/pic-02-03.png?raw=true)
+
+<br/>
+
 4 - Creating our App UI
 
 <br/>
