@@ -65,8 +65,6 @@ http://tachyons.io/
 
 <br/>
 
-<br/>
-
 ### 03 - Material UI Crash Course
 
 <br/>
@@ -88,7 +86,13 @@ https://material-ui.com/
 
 <br/>
 
-4 - Creating our App UI
+<br/>
+
+### 04 - Creating our App UI
+
+<br/>
+
+![Application](/img/pic-02-04.png?raw=true)
 
 <br/>
 
