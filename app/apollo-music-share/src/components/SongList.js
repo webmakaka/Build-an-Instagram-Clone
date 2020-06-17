@@ -10,15 +10,17 @@ import {
   makeStyles,
 } from '@material-ui/core';
 import { Save, PlayArrow } from '@material-ui/icons';
+import { useSubscription } from '@apollo/react-hooks';
+import { GET_SONGS } from '../graphql/subscriptions';
 
 function SongList() {
-  let loading = false;
+  const { data, loading, error } = useSubscription(GET_SONGS);
 
-  const song = {
-    title: 'Space',
-    artist: 'Enjoykin',
-    thumbnail: 'http://img.youtube.com/vi/--ZtUFsIgMk/0.jpg',
-  };
+  // const song = {
+  //   title: 'Space',
+  //   artist: 'Enjoykin',
+  //   thumbnail: 'http://img.youtube.com/vi/--ZtUFsIgMk/0.jpg',
+  // };
 
   const useStyles = makeStyles((theme) => ({
     container: {
@@ -86,10 +88,12 @@ function SongList() {
     );
   }
 
+  if (error) return <div>Error fetching songs</div>;
+
   return (
     <div>
-      {Array.from({ length: 10 }, () => song).map((sog, i) => (
-        <Song key={i} song={song} />
+      {data.songs.map((song) => (
+        <Song key={song.id} song={song} />
       ))}
     </div>
   );

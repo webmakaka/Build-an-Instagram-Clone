@@ -96,9 +96,47 @@ https://material-ui.com/
 
 <br/>
 
-## Building our App Interface
+## 03 Building our App Interface
 
-1 - Integrating GraphQL with Subscriptions
+<br/>
+
+### 01 - Integrating GraphQL with Subscriptions
+
+    $ npm install apollo-boost @apollo/react-hooks graphql
+    $ npm install react-player
+    $ npm install apollo-link-ws subscriptions-transport-ws apollo-cache-inmemory apollo-client
+
+```
+mutation addSong {
+  insert_songs(objects: {thumbnail: "http://img.youtube.com/vi/--ZtUFsIgMk/0.jpg", title: "Space", artist: "Enjoykin", duration: 1.5, url: "https://www.youtube.com/watch?v=n-AdoTkXwbc"}) {
+    returning {
+      id
+      duration
+      created_at
+      artist
+      title
+      url
+      thumbnail
+    }
+  }
+}
+```
+
+```
+query MyQuery {
+  songs {
+    id
+    artist
+    duration
+    thumbnail
+    title
+    url
+  }
+}
+```
+
+<br/>
+
 2 - Managing State with React and Apollo
 3 - Playing Songs / Finishing the App
 
