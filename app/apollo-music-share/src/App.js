@@ -1,18 +1,33 @@
 import React from 'react';
+import { Grid, useMediaQuery, Hidden } from '@material-ui/core';
+
+import { songReducer } from './reducer';
 
 import Header from './components/Header';
 import AddSong from './components/AddSong';
 import SongList from './components/SongList';
 import SongPlayer from './components/SongPlayer';
 
-import { Grid, useMediaQuery, Hidden } from '@material-ui/core';
+export const SongContext = React.createContext({
+  song: {
+    id: '0924ab78-97d0-40e7-b393-be86f2b84e9f',
+    title: 'Sober Live (Pro Shot) REMASTERED',
+    artist: 'Tool',
+    thumbnail: 'http://img.youtube.com/vi/u7lweNCCwS0/0.jpg',
+    url: 'https://www.youtube.com/watch?v=u7lweNCCwS0',
+    duration: 301,
+  },
+  isPlaying: false,
+});
 
 function App() {
+  const initialSongState = React.useContext(SongContext);
+  const [state, dispatch] = React.useReducer(songReducer, initialSongState);
   const greaterThanSm = useMediaQuery((theme) => theme.breakpoints.up('sm'));
   const greaterThanMd = useMediaQuery((theme) => theme.breakpoints.up('md'));
 
   return (
-    <>
+    <SongContext.Provider value={{ state, dispatch }}>
       <Hidden only="xs">
         <Header />
       </Hidden>
@@ -42,7 +57,7 @@ function App() {
           <SongPlayer />
         </Grid>
       </Grid>
-    </>
+    </SongContext.Provider>
   );
 }
 

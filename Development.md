@@ -137,7 +137,14 @@ query MyQuery {
 
 <br/>
 
-2 - Managing State with React and Apollo
+### 02 - Managing State with React and Apollo
+
+<br/>
+
+![Application](/img/pic-02-05.png?raw=true)
+
+<br/>
+
 3 - Playing Songs / Finishing the App
 
 <br/>
