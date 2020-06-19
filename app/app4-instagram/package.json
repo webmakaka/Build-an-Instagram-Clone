@@ -8,7 +8,7 @@
     "@material-ui/icons": "^4.9.1",
     "@rooks/use-outside-click": "^3.6.0",
     "@tanem/react-nprogress": "^3.0.16",
-    "apollo-boost": "^0.4.7",
+    "apollo-boost": "^0.4.9",
     "apollo-cache-inmemory": "^1.6.5",
     "apollo-client": "^2.6.8",
     "apollo-link-ws": "^1.0.19",
