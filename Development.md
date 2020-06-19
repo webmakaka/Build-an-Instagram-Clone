@@ -145,7 +145,11 @@ query MyQuery {
 
 <br/>
 
-3 - Playing Songs / Finishing the App
+### 03 - Playing Songs / Finishing the App
+
+<br/>
+
+![Application](/img/pic-02-06.png?raw=true)
 
 <br/>
 
