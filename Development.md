@@ -153,9 +153,20 @@ query MyQuery {
 
 <br/>
 
-## Polishing our Final Instagram App
+## 04 Polishing our Final Instagram App
 
-1 - Breaking Down the Instagram UI
+<br/>
+
+### 1 - Breaking Down the Instagram UI
+
+starting point
+
+https://github.com/codeartistryio/instagram-react12
+
+    $ npm install
+
+<br/>
+
 2 - Building Accounts Pages
 3 - Making Feed Page
 4 - Improving Navbar
