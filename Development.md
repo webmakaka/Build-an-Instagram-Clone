@@ -82,7 +82,7 @@ https://material-ui.com/
 
 <br/>
 
-![Application](/img/pic-02-03.png?raw=true)
+![Application](/img/pic-03-01.png?raw=true)
 
 <br/>
 
@@ -92,7 +92,7 @@ https://material-ui.com/
 
 <br/>
 
-![Application](/img/pic-02-04.png?raw=true)
+![Application](/img/pic-03-02.png?raw=true)
 
 <br/>
 
@@ -141,7 +141,7 @@ query MyQuery {
 
 <br/>
 
-![Application](/img/pic-02-05.png?raw=true)
+![Application](/img/pic-03-03.png?raw=true)
 
 <br/>
 
@@ -149,7 +149,7 @@ query MyQuery {
 
 <br/>
 
-![Application](/img/pic-02-06.png?raw=true)
+![Application](/img/pic-03-04.png?raw=true)
 
 <br/>
 
@@ -157,7 +157,7 @@ query MyQuery {
 
 <br/>
 
-### 1 - Breaking Down the Instagram UI
+### 01 - Breaking Down the Instagram UI
 
 starting point
 

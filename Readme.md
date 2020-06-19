@@ -6,6 +6,18 @@ https://react12.io/instagram-clone/
 
 <br/>
 
+### App2
+
+![Application](/img/pic-02-02.png?raw=true)
+
+<br/>
+
+### App3
+
+![Application](/img/pic-03-04.png?raw=true)
+
+<br/>
+
 ## [Development step by step](./Development.md)
 
 <br/>
