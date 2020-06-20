@@ -167,7 +167,26 @@ https://github.com/codeartistryio/instagram-react12
 
 <br/>
 
-2 - Building Accounts Pages
+### 02 - Building Accounts Pages
+
+<br/>
+
+![Application](/img/pic-04-01.png?raw=true)
+
+http://localhost:3000/accounts/login
+
+<br/>
+
+![Application](/img/pic-04-02.png?raw=true)
+
+http://localhost:3000/accounts/emailsignup
+
+<br/>
+
+![Application](/img/pic-04-03.png?raw=true)
+
+<br/>
+
 3 - Making Feed Page
 4 - Improving Navbar
 5 - Explore and Post Pages
