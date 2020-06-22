@@ -187,7 +187,16 @@ http://localhost:3000/accounts/emailsignup
 
 <br/>
 
-3 - Making Feed Page
+### 03 - Making Feed Page
+
+http://localhost:3000/
+
+<br/>
+
+![Application](/img/pic-04-04.png?raw=true)
+
+<br/>
+
 4 - Improving Navbar
 5 - Explore and Post Pages
 6 - Loading Skeletons and Profile Page
