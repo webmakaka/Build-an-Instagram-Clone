@@ -197,7 +197,14 @@ http://localhost:3000/
 
 <br/>
 
-4 - Improving Navbar
+### 04 - Improving Navbar
+
+<br/>
+
+![Application](/img/pic-04-05.png?raw=true)
+
+<br/>
+
 5 - Explore and Post Pages
 6 - Loading Skeletons and Profile Page
 7 - Edit Profile Page and Deployment

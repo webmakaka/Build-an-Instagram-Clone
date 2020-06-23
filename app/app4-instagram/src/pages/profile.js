@@ -1,10 +1,11 @@
-import React from "react";
-import { useProfilePageStyles } from "../styles";
+import React from 'react';
+import Layout from '../components/shared/Layout';
+import { useProfilePageStyles } from '../styles';
 
 function ProfilePage() {
   useProfilePageStyles();
 
-  return <div>ProfilePage</div>;
+  return <Layout>ProfilePage</Layout>;
 }
 
 export default ProfilePage;
