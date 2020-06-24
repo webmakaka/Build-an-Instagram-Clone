@@ -19,6 +19,8 @@ import {
   SaveIcon,
   RemoveIcon,
 } from '../../icons';
+import FollowSuggestions from '../shared/FollowSuggestions';
+import OptionsDialog from '../shared/OptionsDialog';
 
 function LikeButton() {
   const classes = useFeedPostStyles();
@@ -92,17 +94,25 @@ function Comment() {
   );
 }
 
-function FeedPost({ post }) {
+function FeedPost({ post, index }) {
   const classes = useFeedPostStyles();
   const [showCaption, setCaption] = React.useState(false);
+  const [showOptionsDialog, setOptionsDialog] = React.useState(false);
   const { id, media, likes, user, caption, comments } = post;
+  const showFollowSuggestions = index === 1;
 
   return (
     <>
-      <article className={classes.article}>
+      <article
+        className={classes.article}
+        style={{ marginBottom: showFollowSuggestions && 30 }}
+      >
         <div className={classes.postHeader}>
           <UserCard user={user} />
-          <MoreIcon className={classes.moreIcon} />
+          <MoreIcon
+            className={classes.moreIcon}
+            onClick={() => setOptionsDialog(true)}
+          />
         </div>
         <div>
           <img src={media} alt="Post media" className={classes.image} />
@@ -116,7 +126,7 @@ function FeedPost({ post }) {
             <ShareIcon />
             <SaveButton />
           </div>
-          <Typography className={classes.like} variant="subtitle2">
+          <Typography className={classes.likes} variant="subtitle2">
             <span>{likes === 1 ? '1 like' : `${likes} likes`}</span>
           </Typography>
           <div className={showCaption ? classes.expanded : classes.collapsed}>
@@ -187,6 +197,10 @@ function FeedPost({ post }) {
           <Comment />
         </Hidden>
       </article>
+      {showFollowSuggestions && <FollowSuggestions />}
+      {showOptionsDialog && (
+        <OptionsDialog onClose={() => setOptionsDialog(false)} />
+      )}
     </>
   );
 }

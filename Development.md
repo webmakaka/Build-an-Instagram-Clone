@@ -205,7 +205,22 @@ http://localhost:3000/
 
 <br/>
 
-5 - Explore and Post Pages
+### 05 - Explore and Post Pages
+
+<br/>
+
+![Application](/img/pic-04-06.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-07.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-08.png?raw=true)
+
+<br/>
+
 6 - Loading Skeletons and Profile Page
 7 - Edit Profile Page and Deployment
 
