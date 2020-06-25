@@ -221,7 +221,14 @@ http://localhost:3000/
 
 <br/>
 
-6 - Loading Skeletons and Profile Page
+### 06 - Loading Skeletons and Profile Page
+
+<br/>
+
+![Application](/img/pic-04-09.png?raw=true)
+
+<br/>
+
 7 - Edit Profile Page and Deployment
 
 <br/>

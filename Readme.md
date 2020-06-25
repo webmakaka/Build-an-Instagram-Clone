@@ -20,9 +20,12 @@ https://react12.io/instagram-clone/
 
 ## [Development step by step](./Development.md)
 
+<!--
 <br/>
 
 appname: react-social-media.dev
+
+-->
 
 <br/>
 

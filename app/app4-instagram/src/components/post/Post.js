@@ -20,6 +20,7 @@ import {
 import OptionsDialog from '../shared/OptionsDialog';
 import { defaultPost } from '../../data';
 import { Link } from 'react-router-dom';
+import PostSkeleton from './PostSkeleton';
 
 function LikeButton() {
   const classes = usePostStyles();
@@ -95,8 +96,11 @@ function Comment() {
 
 function Post() {
   const classes = usePostStyles();
+  const [loading] = React.useState(false);
   const [showOptionsDialog, setOptionsDialog] = React.useState(false);
   const { id, media, likes, user, caption, comments } = defaultPost;
+
+  if (loading) return <PostSkeleton />;
 
   return (
     <div className={classes.postContainer}>
