@@ -229,7 +229,15 @@ http://localhost:3000/
 
 <br/>
 
-7 - Edit Profile Page and Deployment
+<br/>
+
+### 07 - Edit Profile Page and Deployment
+
+<br/>
+
+![Application](/img/pic-04-10.png?raw=true)
+
+Deploy to now.sh is not interesting.
 
 <br/>
 

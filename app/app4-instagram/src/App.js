@@ -20,7 +20,7 @@ function App() {
     if (history.action !== 'POP' && !modal) {
       prevLocation.current = location;
     }
-  }, [location, modal]);
+  }, [location, modal, history.action]);
 
   const isModalOpen = modal && prevLocation.current !== location;
 
