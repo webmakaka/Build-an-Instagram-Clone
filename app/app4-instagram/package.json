@@ -2,6 +2,9 @@
   "name": "instagram-react12",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=12.16.1"
+  },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
     "@material-ui/core": "^4.9.3",

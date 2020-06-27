@@ -229,15 +229,103 @@ http://localhost:3000/
 
 <br/>
 
-<br/>
-
 ### 07 - Edit Profile Page and Deployment
 
 <br/>
 
 ![Application](/img/pic-04-10.png?raw=true)
 
-Deploy to now.sh is not interesting.
+Deploy to now.sh (not interesting for me)
+
+<br/>
+
+### 05 - Instagram App + Backend
+
+<br/>
+
+### 01 - Setup Auth, Create Users
+
+https://hasura.io/blog/authentication-and-authorization-using-hasura-and-firebase/
+
+_HASURA_GRAPHQL_ADMIN_SECRET_
+
+![Application](/img/pic-04-11.png?raw=true)
+
+<br/>
+
+http://firebase.google.com/
+
+Create Project "build-an-instagram-clone"
+
+Authentication -> Set up sign-in method
+
+Email/Password -> Enabled
+
+<br/>
+
+Databases -> Rules
+
+read, write -> true
+
+```
+{
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+```
+
+<br/>
+
+    $ cd "project_root"
+    $ npm install -g firebase-tools
+    $ firebase login
+    // $ firebase login --reauth
+    $ firebase init
+
+1. Functions: Configure and deploy Cloud Functions
+
+2. JavaScript
+
+3. Do you want to use ESLint. No
+
+4. Do you want to install dependencies with npm now? Yes
+
+
+    $ firebase deploy --only functions
+
+    // without debug i had an error
+    $ // firebase deploy --only functions --debug
+
+<br/>
+
+![Application](/img/pic-04-12.png?raw=true)
+
+<br/>
+// Try to signup
+http://localhost:3000/accounts/emailsignup
+
+<br/>
+
+![Application](/img/pic-04-13.png?raw=true)
+
+<!--
+
+2 - Signup Form Validation and Error Handling
+3 - Email Login and Third Party Auth
+4 - Me Subscription and Editing User Data
+5 - Uploading Avatars and Adding User Search
+6 - Adding New Posts and Uploading Media
+7 - Liking, Saving, and Commenting on Posts
+8 - Creating and Displaying Notifications
+9 - Profile Page, plus Following and Unfollowing Users
+10 - Finishing Explore Page
+11 - Adding User Feed with Infinite Scroll
+12 - Finishing App
+
+-->
 
 <br/>
 
