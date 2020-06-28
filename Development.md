@@ -315,6 +315,14 @@ http://localhost:3000/accounts/emailsignup
 
 ### 02 - Signup Form Validation and Error Handling
 
+https://react-hook-form.com/
+
+    $ npm install react-hook-form validator
+
+<br/>
+
+![Application](/img/pic-04-14.png?raw=true)
+
 <!--
 
 3 - Email Login and Third Party Auth
