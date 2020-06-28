@@ -311,9 +311,12 @@ http://localhost:3000/accounts/emailsignup
 
 ![Application](/img/pic-04-13.png?raw=true)
 
+<br/>
+
+### 02 - Signup Form Validation and Error Handling
+
 <!--
 
-2 - Signup Form Validation and Error Handling
 3 - Email Login and Third Party Auth
 4 - Me Subscription and Editing User Data
 5 - Uploading Avatars and Adding User Search

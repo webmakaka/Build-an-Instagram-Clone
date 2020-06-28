@@ -99,7 +99,7 @@ function App() {
       <h1 className="f2-l">
         GraphQL Checklist{' '}
         <span role="img" aria-label="Checkmark">
-          v
+          ✔️
         </span>
       </h1>
 

@@ -70,7 +70,7 @@ function FollowSuggestions({ hideHeader }) {
           infinite
           speed={1000}
           touchThreshold={1000}
-          variableWitdth
+          variableWidth
           swipeToSlide
           arrows
           slidesToScroll={3}

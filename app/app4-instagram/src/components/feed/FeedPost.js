@@ -49,12 +49,12 @@ function SaveButton() {
   const onClick = saved ? handleRemove : handleSave;
 
   function handleSave() {
-    console.log('save');
+    console.log('save1');
     setSaved(true);
   }
 
   function handleRemove() {
-    console.log('remove');
+    console.log('remove1');
     setSaved(false);
   }
 
@@ -118,7 +118,7 @@ function FeedPost({ post, index }) {
           <img src={media} alt="Post media" className={classes.image} />
         </div>
         <div className={classes.postButtonsWrapper}>
-          <div className={classes.postButtonsWrapper}>
+          <div className={classes.postButtons}>
             <LikeButton />
             <Link to={`/p/${id}`}>
               <CommentIcon />
@@ -182,7 +182,7 @@ function FeedPost({ post, index }) {
                 >
                   {comment.user.username}
                 </Typography>{' '}
-                <Typography variant="body2" componnet="span">
+                <Typography variant="body2" component="span">
                   {comment.content}
                 </Typography>
               </Link>
