@@ -10,7 +10,7 @@
     "@material-ui/core": "^4.9.3",
     "@material-ui/icons": "^4.9.1",
     "@rooks/use-outside-click": "^3.6.0",
-    "@tanem/react-nprogress": "^3.0.31",
+    "@tanem/react-nprogress": "^3.0.32",
     "apollo-boost": "^0.4.9",
     "apollo-cache-inmemory": "^1.6.6",
     "apollo-client": "^2.6.10",
