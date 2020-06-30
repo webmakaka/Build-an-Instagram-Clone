@@ -323,9 +323,22 @@ https://react-hook-form.com/
 
 ![Application](/img/pic-04-14.png?raw=true)
 
+<br/>
+
+### 03 - Email Login and Third Party Auth
+
+Authentication -> Set up sign-in method
+
+Google -> Enabled
+
+Add Project support email.
+
+<br/>
+
+![Application](/img/pic-04-15.png?raw=true)
+
 <!--
 
-3 - Email Login and Third Party Auth
 4 - Me Subscription and Editing User Data
 5 - Uploading Avatars and Adding User Search
 6 - Adding New Posts and Uploading Media
