@@ -296,7 +296,8 @@ read, write -> true
 
     $ firebase deploy --only functions
 
-    // without debug i had an error
+// without debug i had an error
+
     $ // firebase deploy --only functions --debug
 
 <br/>
@@ -304,7 +305,8 @@ read, write -> true
 ![Application](/img/pic-04-12.png?raw=true)
 
 <br/>
-// Try to signup
+
+// Try to signup  
 http://localhost:3000/accounts/emailsignup
 
 <br/>
@@ -337,9 +339,16 @@ Add Project support email.
 
 ![Application](/img/pic-04-15.png?raw=true)
 
+<br/>
+
+### 04 - Me Subscription and Editing User Data
+
+<br/>
+
+![Application](/img/pic-04-16.png?raw=true)
+
 <!--
 
-4 - Me Subscription and Editing User Data
 5 - Uploading Avatars and Adding User Search
 6 - Adding New Posts and Uploading Media
 7 - Liking, Saving, and Commenting on Posts
