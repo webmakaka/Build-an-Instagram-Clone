@@ -347,9 +347,27 @@ Add Project support email.
 
 ![Application](/img/pic-04-16.png?raw=true)
 
+<br/>
+
+### 05 - Uploading Avatars and Adding User Search
+
+cloudinary.com
+
+cloudinary.com -> Settings -> Upload -> Add upload preset
+
+<br/>
+
+```
+Name: Instagram-clone
+Signing Mode: unsigned
+```
+
+<br/>
+
+![Application](/img/pic-04-17.png?raw=true)
+
 <!--
 
-5 - Uploading Avatars and Adding User Search
 6 - Adding New Posts and Uploading Media
 7 - Liking, Saving, and Commenting on Posts
 8 - Creating and Displaying Notifications

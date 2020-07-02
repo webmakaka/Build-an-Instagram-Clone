@@ -26,19 +26,29 @@ import {
 import { useNavbarStyles, WhiteTooltip, RedTooltip } from '../../styles';
 import logo from '../../images/logo.png';
 import NotificationList from '../notification/NotificationList';
+import { useLazyQuery } from '@apollo/react-hooks';
+import { SEARCH_USERS } from '../../graphql/queries';
+import { UserContext } from '../../App';
 
 function Search({ history }) {
   const classes = useNavbarStyles();
-  const [loading] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
   const [results, setResults] = React.useState([]);
   const [query, setQuery] = React.useState('');
+  const [searchUsers, { data }] = useLazyQuery(SEARCH_USERS);
 
   const hasResults = Boolean(query) && results.length > 0;
 
   React.useEffect(() => {
     if (!query.trim()) return;
-    setResults(Array.from({ length: 5 }, () => getDefaultUser()));
-  }, [query]);
+    setLoading(true);
+    const variables = { query: `%${query}%` };
+    searchUsers({ variables });
+    if (data) {
+      setResults(data.users);
+      setLoading(false);
+    }
+  }, [query, data, searchUsers]);
 
   function handleClearInput() {
     setQuery('');
@@ -101,6 +111,7 @@ function Search({ history }) {
 }
 
 function Links({ path }) {
+  const { me } = React.useContext(UserContext);
   const classes = useNavbarStyles();
   const [showList, setList] = React.useState(false);
   const [showTooltip, setTooltip] = React.useState(true);
@@ -155,10 +166,7 @@ function Links({ path }) {
                 : ''
             }
           ></div>
-          <Avatar
-            src={defaultCurrentUser.profile_image}
-            className={classes.prifileImage}
-          />
+          <Avatar src={me.profile_image} className={classes.prifileImage} />
         </Link>
       </div>
     </div>
