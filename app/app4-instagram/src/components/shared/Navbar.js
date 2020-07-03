@@ -12,7 +12,6 @@ import {
 } from '@material-ui/core';
 import { useNProgress } from '@tanem/react-nprogress';
 import NotificationTooltip from '../notification/NotificationTooltip';
-import { defaultCurrentUser, getDefaultUser } from '../../data';
 import {
   LoadingIcon,
   AddIcon,
@@ -23,12 +22,14 @@ import {
   HomeIcon,
   HomeActiveIcon,
 } from '../../icons';
-import { useNavbarStyles, WhiteTooltip, RedTooltip } from '../../styles';
-import logo from '../../images/logo.png';
+
 import NotificationList from '../notification/NotificationList';
 import { useLazyQuery } from '@apollo/react-hooks';
 import { SEARCH_USERS } from '../../graphql/queries';
 import { UserContext } from '../../App';
+import { AddPostDialog } from '../post/AddPostDialog';
+import { useNavbarStyles, WhiteTooltip, RedTooltip } from '../../styles';
+import logo from '../../images/logo.png';
 
 function Search({ history }) {
   const classes = useNavbarStyles();
@@ -115,6 +116,10 @@ function Links({ path }) {
   const classes = useNavbarStyles();
   const [showList, setList] = React.useState(false);
   const [showTooltip, setTooltip] = React.useState(true);
+  const [media, setMedia] = React.useState(null);
+  const [showAddPostDialog, setAddPostDialog] = React.useState(false);
+
+  const inputRef = React.useRef();
 
   React.useEffect(() => {
     const timeout = setTimeout(handleHideTooltip, 5000);
@@ -135,12 +140,34 @@ function Links({ path }) {
     setList(false);
   }
 
+  function openFileInput() {
+    inputRef.current.click();
+  }
+
+  function handleAddPost(event) {
+    setMedia(event.target.files[0]);
+    setAddPostDialog(true);
+  }
+
+  function handleClose() {
+    setAddPostDialog(false);
+  }
+
   return (
     <div className={classes.linksContainer}>
       {showList && <NotificationList handleHideList={handleHideList} />}
       <div className={classes.linksWrapper}>
+        {showAddPostDialog && (
+          <AddPostDialog media={media} handleClose={handleClose} />
+        )}
         <Hidden xsDown>
-          <AddIcon />
+          <input
+            type="file"
+            style={{ display: 'none' }}
+            ref={inputRef}
+            onChange={handleAddPost}
+          />
+          <AddIcon onClick={openFileInput} />
         </Hidden>
         <Link to="/">{path === '/' ? <HomeActiveIcon /> : <HomeIcon />}</Link>
         <Link to="/explore">
@@ -158,13 +185,9 @@ function Links({ path }) {
           </div>
         </RedTooltip>
 
-        <Link to={`/${defaultCurrentUser.username}`}>
+        <Link to={`/${me.username}`}>
           <div
-            className={
-              path === `/${defaultCurrentUser.username}`
-                ? classes.profileActive
-                : ''
-            }
+            className={path === `/${me.username}` ? classes.profileActive : ''}
           ></div>
           <Avatar src={me.profile_image} className={classes.prifileImage} />
         </Link>

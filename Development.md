@@ -366,9 +366,42 @@ Signing Mode: unsigned
 
 ![Application](/img/pic-04-17.png?raw=true)
 
+<br/>
+
+### 06 - Adding New Posts and Uploading Media
+
+<br/>
+
+![Application](/img/pic-04-18.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-19.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-20.png?raw=true)
+
+<br/>
+
+https://docs.slatejs.org/
+
+<br/>
+
+    $ npm install slate slate-react slate-history
+    $ npm install escape-html
+
+<br/>
+
+cloudinary.com -> Settings -> Upload -> Instagram-clone -> Upload Manipulations -> Incoming Transformation
+
+```
+Width: 500
+Height: 500
+```
+
 <!--
 
-6 - Adding New Posts and Uploading Media
 7 - Liking, Saving, and Commenting on Posts
 8 - Creating and Displaying Notifications
 9 - Profile Page, plus Following and Unfollowing Users

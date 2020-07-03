@@ -64,3 +64,23 @@ export const EDIT_USER_AVATAR = gql`
     }
   }
 `;
+
+export const CREATE_POST = gql`
+  mutation createPost(
+    $userId: uuid!
+    $media: String!
+    $location: String!
+    $caption: String!
+  ) {
+    insert_posts(
+      objects: {
+        user_id: $userId
+        media: $media
+        location: $location
+        caption: $caption
+      }
+    ) {
+      affected_rows
+    }
+  }
+`;
