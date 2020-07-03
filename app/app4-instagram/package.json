@@ -21,7 +21,7 @@
     "graphql": "^14.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1",
+    "react-helmet": "^6.1.0",
     "react-hook-form": "^5.7.2",
     "react-lines-ellipsis": "^0.14.1",
     "react-modal": "^3.11.2",
