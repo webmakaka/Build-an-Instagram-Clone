@@ -400,9 +400,72 @@ Width: 500
 Height: 500
 ```
 
+<br/>
+
+### 07 - Liking, Saving, and Commenting on Posts
+
+<br/>
+
+![Application](/img/pic-04-21.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-22.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-23.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-24.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-25.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-26.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-27.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-28.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-29.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-30.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-31.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-32.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-33.png?raw=true)
+
+<br/>
+
+http://localhost:3000/p/dfbbf276-c000-4baf-b0fc-4769f4f55f8a
+
+<br/>
+
+![Application](/img/pic-04-34.png?raw=true)
+
 <!--
 
-7 - Liking, Saving, and Commenting on Posts
 8 - Creating and Displaying Notifications
 9 - Profile Page, plus Following and Unfollowing Users
 10 - Finishing Explore Page
