@@ -464,9 +464,38 @@ http://localhost:3000/p/dfbbf276-c000-4baf-b0fc-4769f4f55f8a
 
 ![Application](/img/pic-04-34.png?raw=true)
 
+<br/>
+
+### 08 - Creating and Displaying Notifications
+
+http://date-fns.org/
+
+<br/>
+
+![Application](/img/pic-04-35.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-36.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-37.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-38.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-39.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-40.png?raw=true)
+
 <!--
 
-8 - Creating and Displaying Notifications
 9 - Profile Page, plus Following and Unfollowing Users
 10 - Finishing Explore Page
 11 - Adding User Feed with Infinite Scroll

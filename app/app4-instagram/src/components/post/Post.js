@@ -25,6 +25,7 @@ import PostSkeleton from './PostSkeleton';
 import { useSubscription } from '@apollo/react-hooks';
 import { GET_POST } from '../../graphql/subscriptions';
 import { UserContext } from '../../App';
+import { formatDateToNowShort, formatPostDate } from '../../utils/formatDate';
 import {
   LIKE_POST,
   UNLIKE_POST,
@@ -43,7 +44,7 @@ function AuthorCaption({ user, caption, createdAt }) {
         alt="User avatar"
         style={{ marginRight: 14, width: 32, height: 32 }}
       />
-      <div style={{ display: 'flex', flexDirection: 'columnt' }}>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
         <Link to={user.username}>
           <Typography
             variant="subtitle2"
@@ -65,7 +66,7 @@ function AuthorCaption({ user, caption, createdAt }) {
           color="textSecondary"
           variant="caption"
         >
-          {createdAt}
+          {formatDateToNowShort(createdAt)}
         </Typography>
       </div>
     </div>
@@ -82,7 +83,7 @@ function UserComment({ comment }) {
         alt="User avatar"
         style={{ marginRight: 14, width: 32, height: 32 }}
       />
-      <div style={{ display: 'flex', flexDirection: 'columnt' }}>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
         <Link to={comment.user.username}>
           <Typography
             variant="subtitle2"
@@ -105,7 +106,7 @@ function UserComment({ comment }) {
           color="textSecondary"
           variant="caption"
         >
-          {comment.created_at}
+          {formatDateToNowShort(comment.created_at)}
         </Typography>
       </div>
     </div>
@@ -127,6 +128,7 @@ function LikeButton({ likes, authorId, postId }) {
   const variables = {
     postId,
     userId: currentUserId,
+    profileId: authorId,
   };
 
   function handleLike() {
@@ -186,6 +188,7 @@ function Comment({ postId }) {
     };
 
     createComment({ variables });
+    setContent('');
   }
 
   return (
@@ -232,7 +235,6 @@ function Post({ postId }) {
     likes,
     likes_aggregate,
     saved_posts,
-    user_id,
     location,
     user,
     caption,
@@ -285,7 +287,7 @@ function Post({ postId }) {
           </div>
 
           <Typography color="textSecondary" className={classes.datePosted}>
-            5 DAYS AGO
+            {formatPostDate(created_at)}
           </Typography>
 
           <Hidden xsDown>
