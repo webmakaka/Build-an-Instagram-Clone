@@ -494,9 +494,48 @@ http://date-fns.org/
 
 ![Application](/img/pic-04-40.png?raw=true)
 
+<br/>
+
+### 09 - Profile Page, plus Following and Unfollowing Users
+
+<br/>
+
+![Application](/img/pic-04-41.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-42.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-43.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-44.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-45.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-46.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-47.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-48.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-49.png?raw=true)
+
 <!--
 
-9 - Profile Page, plus Following and Unfollowing Users
 10 - Finishing Explore Page
 11 - Adding User Feed with Infinite Scroll
 12 - Finishing App

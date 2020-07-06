@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '../components/shared/Layout';
 import { useProfilePageStyles } from '../styles';
-import { defaultCurrentUser } from '../data';
 import {
   Hidden,
   Card,
@@ -15,18 +14,109 @@ import {
   Avatar,
 } from '@material-ui/core';
 import ProfilePicture from '../components/shared/ProfilePicture';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { GearIcon } from '../icons';
 import ProfileTabs from '../components/profile/ProfileTabs';
 import { AuthContext } from '../auth';
+import { GET_USER_PROFILE } from '../graphql/queries';
+import LoadingScreen from '../components/shared/LoadingScreen';
+import { UserContext } from '../App';
+import { useQuery, useMutation } from '@apollo/react-hooks';
+import { FOLLOW_USER, UNFOLLOW_USER } from '../graphql/mutations';
+
+function ProfilePage() {
+  const classes = useProfilePageStyles();
+  const { username } = useParams();
+  const { currentUserId } = React.useContext(UserContext);
+  const [showOptionsMenu, setOptionsMenu] = React.useState(false);
+
+  const variables = {
+    username,
+  };
+  const { data, loading } = useQuery(GET_USER_PROFILE, { variables });
+
+  if (loading) return <LoadingScreen />;
+  const [user] = data.users;
+  const isOwner = user.id === currentUserId;
+
+  function handleOptionsMenuClick() {
+    setOptionsMenu(true);
+  }
+
+  function handleCloseMenu() {
+    setOptionsMenu(false);
+  }
+
+  return (
+    <Layout title={`${user.name} (@${user.username})`}>
+      <div className={classes.container}>
+        <Hidden xsDown>
+          <Card className={classes.cardLarge}>
+            <ProfilePicture isOwner={isOwner} image={user.profile_image} />
+            <CardContent className={classes.CardContnetLarge}>
+              <ProfileNameSection
+                user={user}
+                isOwner={isOwner}
+                handleOptionsMenuClick={handleOptionsMenuClick}
+              />
+              <PostCountSection user={user} />
+              <NameBioSection user={user} />
+            </CardContent>
+          </Card>
+        </Hidden>
+        <Hidden smUp>
+          <Card classNam={classes.cardSmall}>
+            <CardContent>
+              <section size={77} className={classes.sectionSmall}>
+                <ProfilePicture isOwner={isOwner} image={user.profile_image} />
+                <ProfileNameSection
+                  user={user}
+                  isOwner={isOwner}
+                  handleOptionsMenuClick={handleOptionsMenuClick}
+                />
+              </section>
+              <NameBioSection user={user} />
+            </CardContent>
+            <PostCountSection user={user} />
+          </Card>
+        </Hidden>
+        {showOptionsMenu && <OptionsMenu handleCloseMenu={handleCloseMenu} />}
+        <ProfileTabs user={user} isOwner={isOwner} />
+      </div>
+    </Layout>
+  );
+}
 
 function ProfileNameSection({ user, isOwner, handleOptionsMenuClick }) {
   const classes = useProfilePageStyles();
   const [showUnfollowDialog, setUnfollowDialog] = React.useState(false);
+  const { currentUserId, followingIds, followerIds } = React.useContext(
+    UserContext
+  );
+
+  const isAlreadyFollowing = followingIds.some((id) => id === user.id);
+  const [isFollowing, setFollowing] = React.useState(isAlreadyFollowing);
+
+  const isFollower = !isFollowing && followerIds.some((id) => id === user.id);
+
+  const variables = {
+    userIdToFollow: user.id,
+    currentUserId,
+  };
+
+  const [followUser] = useMutation(FOLLOW_USER);
+
+  function handleFollowUser() {
+    setFollowing(true);
+    followUser({ variables });
+  }
+
+  const onUnfollowUser = React.useCallback(() => {
+    setUnfollowDialog(false);
+    setFollowing(false);
+  }, []);
 
   let followButton;
-  const isFollowing = true;
-  const isFollower = false;
 
   if (isFollowing) {
     followButton = (
@@ -40,13 +130,23 @@ function ProfileNameSection({ user, isOwner, handleOptionsMenuClick }) {
     );
   } else if (isFollower) {
     followButton = (
-      <Button variant="contained" color="primary" className={classes.button}>
+      <Button
+        variant="contained"
+        color="primary"
+        className={classes.button}
+        onClick={handleFollowUser}
+      >
         Follow Back
       </Button>
     );
   } else {
     followButton = (
-      <Button variant="contained" color="primary" className={classes.button}>
+      <Button
+        variant="contained"
+        color="primary"
+        className={classes.button}
+        onClick={handleFollowUser}
+      >
         Follow
       </Button>
     );
@@ -101,14 +201,30 @@ function ProfileNameSection({ user, isOwner, handleOptionsMenuClick }) {
         </section>
       </Hidden>
       {showUnfollowDialog && (
-        <UnfollowDialog user={user} onClose={() => setUnfollowDialog(false)} />
+        <UnfollowDialog
+          user={user}
+          onClose={() => setUnfollowDialog(false)}
+          onUnfollowUser={onUnfollowUser}
+        />
       )}
     </>
   );
 }
 
-function UnfollowDialog({ onClose, user }) {
+function UnfollowDialog({ onClose, user, onUnfollowUser }) {
   const classes = useProfilePageStyles();
+  const { currentUserId } = React.useContext(UserContext);
+  const [unfollowUser] = useMutation(UNFOLLOW_USER);
+
+  function handleUnfollowUser() {
+    const variables = {
+      userIdToFollow: user.id,
+      currentUserId,
+    };
+
+    unfollowUser({ variables });
+    onUnfollowUser();
+  }
   return (
     <Dialog
       open
@@ -133,7 +249,9 @@ function UnfollowDialog({ onClose, user }) {
         Unfollow @{user.username}?
       </Typography>
       <Divider />
-      <Button className={classes.unfollowButton}>Unfollow</Button>
+      <Button className={classes.unfollowButton} onClick={handleUnfollowUser}>
+        Unfollow
+      </Button>
       <Divider />
       <Button className={classes.cancelButton} onClick={onClose}>
         Cancel
@@ -154,7 +272,7 @@ function PostCountSection({ user }) {
         {options.map((option) => (
           <div className={classes.followingText} key={option}>
             <Typography className={classes.followingCount}>
-              {user[option].length}
+              {user[`${option}_aggregate`].aggregate.count}
             </Typography>
             <Hidden xsDown>
               <Typography>{option}</Typography>
@@ -241,61 +359,6 @@ function OptionsItem({ text, onClick }) {
       </Button>
       <Divider />
     </>
-  );
-}
-
-function ProfilePage() {
-  const classes = useProfilePageStyles();
-  const isOwner = true;
-  const [showOptionsMenu, setOptionsMenu] = React.useState(false);
-
-  function handleOptionsMenuClick() {
-    setOptionsMenu(true);
-  }
-
-  function handleCloseMenu() {
-    setOptionsMenu(false);
-  }
-
-  return (
-    <Layout
-      title={`${defaultCurrentUser.name} (@${defaultCurrentUser.username})`}
-    >
-      <div className={classes.container}>
-        <Hidden xsDown>
-          <Card className={classes.cardLarge}>
-            <ProfilePicture isOwner={isOwner} />
-            <CardContent className={classes.CardContnetLarge}>
-              <ProfileNameSection
-                user={defaultCurrentUser}
-                isOwner={isOwner}
-                handleOptionsMenuClick={handleOptionsMenuClick}
-              />
-              <PostCountSection user={defaultCurrentUser} />
-              <NameBioSection user={defaultCurrentUser} />
-            </CardContent>
-          </Card>
-        </Hidden>
-        <Hidden smUp>
-          <Card classNam={classes.cardSmall}>
-            <CardContent>
-              <section size={77} className={classes.sectionSmall}>
-                <ProfilePicture isOwner={isOwner} />
-                <ProfileNameSection
-                  user={defaultCurrentUser}
-                  isOwner={isOwner}
-                  handleOptionsMenuClick={handleOptionsMenuClick}
-                />
-              </section>
-              <NameBioSection user={defaultCurrentUser} />
-            </CardContent>
-            <PostCountSection user={defaultCurrentUser} />
-          </Card>
-        </Hidden>
-        {showOptionsMenu && <OptionsMenu handleCloseMenu={handleCloseMenu} />}
-        <ProfileTabs user={defaultCurrentUser} isOwner={isOwner} />
-      </div>
-    </Layout>
   );
 }
 
