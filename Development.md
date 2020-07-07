@@ -534,9 +534,20 @@ http://date-fns.org/
 
 ![Application](/img/pic-04-49.png?raw=true)
 
+<br/>
+
+### 10 - Finishing Explore Page
+
+<br/>
+
+![Application](/img/pic-04-50.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-04-51.png?raw=true)
+
 <!--
 
-10 - Finishing Explore Page
 11 - Adding User Feed with Infinite Scroll
 12 - Finishing App
 

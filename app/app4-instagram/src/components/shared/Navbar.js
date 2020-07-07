@@ -203,7 +203,7 @@ function Links({ path }) {
           <div
             className={path === `/${me.username}` ? classes.profileActive : ''}
           ></div>
-          <Avatar src={me.profile_image} className={classes.prifileImage} />
+          <Avatar src={me.profile_image} className={classes.profileImage} />
         </Link>
       </div>
     </div>

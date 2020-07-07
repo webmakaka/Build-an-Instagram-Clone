@@ -1,4 +1,5 @@
 import React from 'react';
+import { useApolloClient } from '@apollo/react-hooks';
 import Layout from '../components/shared/Layout';
 import { useProfilePageStyles } from '../styles';
 import {
@@ -33,7 +34,10 @@ function ProfilePage() {
   const variables = {
     username,
   };
-  const { data, loading } = useQuery(GET_USER_PROFILE, { variables });
+  const { data, loading } = useQuery(GET_USER_PROFILE, {
+    variables,
+    fetchPolicy: 'no-cache',
+  });
 
   if (loading) return <LoadingScreen />;
   const [user] = data.users;
@@ -311,10 +315,12 @@ function OptionsMenu({ handleCloseMenu }) {
   const { signOut } = React.useContext(AuthContext);
   const [showLogOUtMessage, setLogOUtMessage] = React.useState(false);
   const history = useHistory();
+  const client = useApolloClient();
 
   function handleLogOutClick() {
     setLogOUtMessage(true);
-    setTimeout(() => {
+    setTimeout(async () => {
+      await client.clearStore();
       signOut();
       history.push('/accounts/login');
     }, 2000);
