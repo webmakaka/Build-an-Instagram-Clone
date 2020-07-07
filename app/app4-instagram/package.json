@@ -18,7 +18,7 @@
     "date-fns": "^2.10.0",
     "escape-html": "^1.0.3",
     "firebase": "^7.15.3",
-    "graphql": "^14.6.0",
+    "graphql": "^14.7.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
