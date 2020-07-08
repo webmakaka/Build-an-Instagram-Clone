@@ -53,7 +53,7 @@ function MorePostsFromUser({ postId }) {
 
           <article className={classes.article}>
             <div className={classes.postContainer}>
-              {morePosts.posts?.map((post) => (
+              {morePosts?.posts.map((post) => (
                 <GridPost key={post.id} post={post} />
               ))}
             </div>

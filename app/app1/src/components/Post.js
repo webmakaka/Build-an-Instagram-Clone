@@ -1,4 +1,5 @@
 import React from 'react';
+import Img from 'react-graceful-image';
 import { UserContext, PostContext } from '../App';
 
 function Post({ image, content, user, id }) {
@@ -13,7 +14,7 @@ function Post({ image, content, user, id }) {
   return (
     <>
       {image && (
-        <img
+        <Img
           style={{ height: 100, width: 200, objectFit: 'cover' }}
           src={URL.createObjectURL(image)}
           alt="Post cover"

@@ -546,9 +546,18 @@ http://date-fns.org/
 
 ![Application](/img/pic-04-51.png?raw=true)
 
+<br/>
+
+### 11 - Adding User Feed with Infinite Scroll
+
+    $ npm install react-graceful-image
+
+<br/>
+
+![Application](/img/pic-04-52.png?raw=true)
+
 <!--
 
-11 - Adding User Feed with Infinite Scroll
 12 - Finishing App
 
 -->
