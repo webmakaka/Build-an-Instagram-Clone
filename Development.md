@@ -556,11 +556,19 @@ http://date-fns.org/
 
 ![Application](/img/pic-04-52.png?raw=true)
 
-<!--
+<br/>
 
-12 - Finishing App
+### 12 - Finishing App
 
--->
+https://console.firebase.google.com/
+
+Authentication -> Sign-in method
+
+Add domain
+
+<br/>
+
+![Application](/img/pic-04-53.png?raw=true)
 
 <br/>
 

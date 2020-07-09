@@ -20,18 +20,21 @@ https://react12.io/instagram-clone/
 
 ### App4
 
+<br/>
+
+**Dev:**
+
 ![Application](/img/pic-04-current.jpg?raw=true)
 
 <br/>
 
-## [Development step by step](./Development.md)
+**Final:**
 
-<!--
 <br/>
 
-appname: react-social-media.dev
+![Application](/img/pic-04-53.png?raw=true)
 
--->
+## [Development step by step](./Development.md)
 
 <br/>
 

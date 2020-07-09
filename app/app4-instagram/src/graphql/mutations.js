@@ -88,7 +88,7 @@ export const CREATE_POST = gql`
 export const LIKE_POST = gql`
   mutation likePost($postId: uuid!, $userId: uuid!, $profileId: uuid!) {
     insert_likes(objects: { post_id: $postId, user_id: $userId }) {
-      affected_rows
+      __typename
     }
     insert_notifications(
       objects: {
@@ -147,7 +147,16 @@ export const CREATE_COMMENT = gql`
     insert_comments(
       objects: { post_id: $postId, user_id: $userId, content: $content }
     ) {
-      affected_rows
+      returning {
+        id
+        created_at
+        post_id
+        user_id
+        content
+        user {
+          username
+        }
+      }
     }
   }
 `;
