@@ -2,10 +2,6 @@
 
 <br/>
 
-https://react12.io/instagram-clone/
-
-<br/>
-
 ### App2
 
 ![Application](/img/pic-02-02.png?raw=true)
