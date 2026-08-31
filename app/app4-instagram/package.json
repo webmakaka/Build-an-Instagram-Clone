@@ -31,7 +31,7 @@
     "react-slick": "^0.26.1",
     "slate": "^0.58.3",
     "slate-history": "^0.58.3",
-    "slate-react": "^0.58.3",
+    "slate-react": "^0.58.4",
     "slick-carousel": "^1.8.1",
     "subscriptions-transport-ws": "^0.9.16",
     "uuid": "^8.1.0",
