@@ -30,7 +30,7 @@
     "react-scripts": "3.4.1",
     "react-slick": "^0.26.1",
     "slate": "^0.58.3",
-    "slate-history": "^0.58.3",
+    "slate-history": "^0.58.4",
     "slate-react": "^0.58.3",
     "slick-carousel": "^1.8.1",
     "subscriptions-transport-ws": "^0.9.16",
